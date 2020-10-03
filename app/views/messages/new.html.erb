@@ -1,0 +1,14 @@
+<h3>talk_app</h3>
+<div id='messages' >
+  <% @messages.reverse_each do |message| %>
+    <%# <div > %>
+      <p><%= message.text %></p>
+    <%# </div>  %>
+  <% end %>
+</div>
+
+<%= form_with model: @message do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit '送信' %>
+<% end %>
+
